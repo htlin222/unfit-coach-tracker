@@ -7,6 +7,19 @@
 ![Primer](https://img.shields.io/badge/UI-Primer.style-0969da)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## Live
+
+| | |
+|---|---|
+| **網站** | <https://unfit-coach-tracker.pages.dev> |
+| **教練名單 API** | <https://unfit-coach-tracker.pages.dev/api/coaches> |
+| **統計 API** | <https://unfit-coach-tracker.pages.dev/api/stats> |
+| **同步 Worker** | <https://unfit-coach-sync.hsieh-ting-lin.workers.dev/health> |
+
+> ⚠️ 每日 cron 排程目前**未啟用** — 帳號已達 Workers Free 的 5 個 cron 上限，詳見
+> [#10](https://github.com/htlin222/unfit-coach-tracker/issues/10)。在此之前請手動同步：
+> `curl -X POST https://unfit-coach-sync.hsieh-ting-lin.workers.dev/sync`
+
 ## Architecture
 
 ```
