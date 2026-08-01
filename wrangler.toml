@@ -1,0 +1,22 @@
+# ──────────────────────────────────────────────────────────────
+# unfit-coach-tracker — Cloudflare Pages config
+# Frontend (Vite build → dist/) + Pages Functions (functions/api/*)
+#
+# Deploy: pnpm build && wrangler pages deploy
+# The cron Worker lives in wrangler.worker.toml.
+# ──────────────────────────────────────────────────────────────
+name = "unfit-coach-tracker"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "dist"
+
+# D1 binding for functions/api/*.ts (production)
+[[d1_databases]]
+binding = "DB"
+database_name = "unfit-coach-db"
+database_id = "5dc75ba9-96c4-41a4-8462-069c1db9f3ec"
+
+# Preview deployments share the same database
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "unfit-coach-db"
+database_id = "5dc75ba9-96c4-41a4-8462-069c1db9f3ec"

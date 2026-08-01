@@ -1,0 +1,34 @@
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ── Build output ──────────────────────────────────────────────
+dist/
+.vite/
+*.tsbuildinfo
+
+# ── Cloudflare ────────────────────────────────────────────────
+.wrangler/
+.dev.vars
+.dev.vars.*
+wrangler.toml.bak
+
+# ── Secrets / env ─────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ── Editor / OS ───────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# ── Package managers we don't use (pnpm is canonical) ─────────
+package-lock.json
+yarn.lock

@@ -1,0 +1,64 @@
+/* ── Global overrides for the Primer app ────────────────────── */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #f6f8fa;
+}
+
+/* Sticky header */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Table row hover */
+.coach-table-row:hover {
+  background: #f6f8fa;
+}
+
+/* Sync badge pulse */
+.sync-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2da44e;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Category label colors */
+.cat-球類運動 { --cat-bg: #ddf4ff; --cat-fg: #0969da; }
+.cat-格鬥類   { --cat-bg: #ffebe9; --cat-fg: #cf222e; }
+.cat-目標類   { --cat-bg: #dafbe1; --cat-fg: #1a7f37; }
+.cat-水上運動類 { --cat-bg: #ddf4ff; --cat-fg: #0969da; }
+.cat-競技類   { --cat-bg: #fff8c5; --cat-fg: #9a6700; }
+.cat-戶外運動類 { --cat-bg: #f1f0ff; --cat-fg: #622cbc; }
+.cat-傳統類   { --cat-bg: #fbe1ff; --cat-fg: #8250df; }
+.cat-冬季運動類 { --cat-bg: #e7f0ff; --cat-fg: #0550ae; }
+
+/* Scrollable table container */
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 24px 0;
+  color: #636c76;
+  font-size: 12px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary ────────────────────────────────────────────── -->
+  <title>不適任教練資訊追蹤平台 | Unfit Coach Tracker</title>
+  <meta name="description" content="彙整運動部公開之「涉及違法事件不適任教練資訊」，每日自動同步，可依姓名搜尋、依運動種類與分類篩選，並附上司法院裁判書連結。" />
+  <meta name="keywords" content="不適任教練,不適任教練名單,運動部,體育署,教練查詢,裁判書,運動安全,選手保護,unfit coach,Taiwan sports" />
+  <meta name="author" content="unfit-coach-tracker" />
+  <link rel="canonical" href="https://unfit-coach-tracker.pages.dev/" />
+
+  <!-- ── Crawling ───────────────────────────────────────────── -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- ── Icons / theming ────────────────────────────────────── -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0969da" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- ── Open Graph ─────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="不適任教練資訊追蹤平台" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:url" content="https://unfit-coach-tracker.pages.dev/" />
+  <meta property="og:title" content="不適任教練資訊追蹤平台 | Unfit Coach Tracker" />
+  <meta property="og:description" content="彙整運動部公開之不適任教練資訊，每日自動同步，可搜尋、可篩選，附司法院裁判書連結。" />
+  <meta property="og:image" content="https://unfit-coach-tracker.pages.dev/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="不適任教練資訊追蹤平台 — 公部門公開資料，每日自動同步" />
+
+  <!-- ── Twitter / X ────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="不適任教練資訊追蹤平台 | Unfit Coach Tracker" />
+  <meta name="twitter:description" content="彙整運動部公開之不適任教練資訊，每日自動同步，可搜尋、可篩選。" />
+  <meta name="twitter:image" content="https://unfit-coach-tracker.pages.dev/og.png" />
+
+  <!-- ── Structured data ────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://unfit-coach-tracker.pages.dev/#website",
+        "url": "https://unfit-coach-tracker.pages.dev/",
+        "name": "不適任教練資訊追蹤平台",
+        "alternateName": "Unfit Coach Tracker",
+        "description": "彙整運動部公開之不適任教練資訊，每日自動同步，可搜尋、可篩選。",
+        "inLanguage": "zh-Hant-TW",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://unfit-coach-tracker.pages.dev/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://unfit-coach-tracker.pages.dev/#dataset",
+        "name": "涉及違法事件不適任教練資訊",
+        "description": "運動部公告之不適任教練名單，包含姓名、運動種類、分類與司法院裁判書連結，每日自動同步。",
+        "url": "https://unfit-coach-tracker.pages.dev/",
+        "inLanguage": "zh-Hant-TW",
+        "license": "https://opendefinition.org/licenses/cc-by/",
+        "isAccessibleForFree": true,
+        "creator": {
+          "@type": "GovernmentOrganization",
+          "name": "教育部運動部",
+          "url": "https://www.sports.gov.tw/"
+        },
+        "isBasedOn": "https://www.sports.gov.tw/News/6295",
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://unfit-coach-tracker.pages.dev/api/coaches"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://unfit-coach-tracker.pages.dev/#webpage",
+        "url": "https://unfit-coach-tracker.pages.dev/",
+        "name": "不適任教練資訊追蹤平台",
+        "isPartOf": { "@id": "https://unfit-coach-tracker.pages.dev/#website" },
+        "about": { "@id": "https://unfit-coach-tracker.pages.dev/#dataset" },
+        "primaryImageOfPage": "https://unfit-coach-tracker.pages.dev/og.png"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Crawler / no-JS fallback: the SPA renders into #root above. -->
+  <noscript>
+    <h1>不適任教練資訊追蹤平台</h1>
+    <p>
+      本站彙整<a href="https://www.sports.gov.tw/News/6295">運動部「涉及違法事件不適任教練資訊專區」</a>
+      公開之名單，每日自動同步，提供姓名搜尋、運動種類與分類篩選，並附上司法院裁判書連結。
+    </p>
+    <p>本頁需要 JavaScript 才能顯示互動式列表。你也可以直接取用開放 API：</p>
+    <ul>
+      <li><a href="/api/coaches">/api/coaches</a> — 教練名單（支援 q、category、sport、page 參數）</li>
+      <li><a href="/api/stats">/api/stats</a> — 統計與最後同步狀態</li>
+    </ul>
+    <p>資料僅整理公部門已公開資訊，不對裁判書內容做實質判斷，一切以官方來源為準。</p>
+  </noscript>
+
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# ──────────────────────────────────────────────────────────────
+# unfit-coach-tracker — cron Worker config
+# Scrapes sports.gov.tw daily and upserts into D1.
+#
+# Deploy: wrangler deploy -c wrangler.worker.toml
+# ──────────────────────────────────────────────────────────────
+name = "unfit-coach-sync"
+main = "worker/index.ts"
+compatibility_date = "2026-07-01"
+
+[observability]
+enabled = true
+
+# Cron: 06:00 UTC (14:00 Taiwan) every day
+[triggers]
+crons = ["0 6 * * *"]
+
+# D1 binding — same database as the Pages Functions
+[[d1_databases]]
+binding = "DB"
+database_name = "unfit-coach-db"
+database_id = "5dc75ba9-96c4-41a4-8462-069c1db9f3ec"
+
+[vars]
+SOURCE_URL = "https://www.sports.gov.tw/News/6295"
+USER_AGENT = "unfit-coach-tracker/1.0 (+https://unfit-coach-tracker.pages.dev)"

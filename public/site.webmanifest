@@ -1,0 +1,15 @@
+{
+  "name": "不適任教練資訊追蹤平台",
+  "short_name": "不適任教練查詢",
+  "description": "彙整運動部公開之不適任教練資訊，每日自動同步，可搜尋、可篩選。",
+  "lang": "zh-Hant-TW",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fa",
+  "theme_color": "#0969da",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

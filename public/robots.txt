@@ -1,0 +1,8 @@
+# unfit-coach-tracker — https://unfit-coach-tracker.pages.dev
+User-agent: *
+Allow: /
+
+# The JSON API is open, but there is nothing to index there.
+Disallow: /api/
+
+Sitemap: https://unfit-coach-tracker.pages.dev/sitemap.xml
