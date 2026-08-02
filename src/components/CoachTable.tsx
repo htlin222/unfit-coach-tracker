@@ -27,8 +27,9 @@ export function CoachTable({ coaches }: { coaches: Coach[] }) {
             <th style={thStyle}>姓名</th>
             <th style={thStyle}>運動種類</th>
             <th style={thStyle}>分類</th>
-            <th style={thStyle}>裁判書</th>
-            <th style={thStyle}>最後更新</th>
+            <th style={thStyle}>判決</th>
+            <th style={thStyle}>判決日期</th>
+            <th style={thStyle}>參考連結</th>
           </tr>
         </thead>
         <tbody>
@@ -53,23 +54,57 @@ export function CoachTable({ coaches }: { coaches: Coach[] }) {
                 <CategoryLabel category={c.category} />
               </td>
               <td style={tdStyle}>
-                {c.judgment_url ? (
-                  <Link
-                    href={c.judgment_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    sx={{ fontSize: 0 }}
-                  >
-                    {c.judgment_type} ↗
-                  </Link>
+                {c.court || c.case_no ? (
+                  <Box sx={{ lineHeight: 1.4 }}>
+                    {c.court && (
+                      <Text sx={{ fontSize: 0, display: "block" }}>{c.court}</Text>
+                    )}
+                    {c.case_no && (
+                      <Text
+                        sx={{
+                          fontSize: 0,
+                          color: "fg.muted",
+                          fontFamily: "mono",
+                          display: "block",
+                        }}
+                      >
+                        {c.case_no}
+                      </Text>
+                    )}
+                  </Box>
                 ) : (
-                  <Text sx={{ color: "fg.subtle", fontSize: 0 }}>—</Text>
+                  <Dash />
                 )}
               </td>
               <td style={tdStyle}>
-                <Text sx={{ fontSize: 0, color: "fg.muted" }}>
-                  {new Date(c.last_updated_at).toLocaleDateString("zh-TW")}
-                </Text>
+                {c.judgment_date ? (
+                  <Text sx={{ fontSize: 0, color: "fg.muted", whiteSpace: "nowrap" }}>
+                    {c.judgment_date}
+                  </Text>
+                ) : (
+                  <Dash />
+                )}
+              </td>
+              <td style={tdStyle}>
+                <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+                  {c.judgment_url && (
+                    <RefLink
+                      href={c.judgment_url}
+                      label={`${c.name} 的${c.judgment_type || "裁判書"}（司法院）`}
+                    >
+                      {c.judgment_type || "裁判書"} ↗
+                    </RefLink>
+                  )}
+                  {c.source_url && (
+                    <RefLink
+                      href={c.source_url}
+                      label={`${c.name} 的運動部公告內頁`}
+                    >
+                      公告 ↗
+                    </RefLink>
+                  )}
+                  {!c.judgment_url && !c.source_url && <Dash />}
+                </Box>
               </td>
             </tr>
           ))}
@@ -77,6 +112,35 @@ export function CoachTable({ coaches }: { coaches: Coach[] }) {
       </table>
     </Box>
   );
+}
+
+// Each row repeats the same link text, so give screen readers the
+// coach's name to tell them apart.
+function RefLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      title={label}
+      sx={{ fontSize: 0, whiteSpace: "nowrap" }}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function Dash() {
+  return <Text sx={{ color: "fg.subtle", fontSize: 0 }}>—</Text>;
 }
 
 const thStyle: React.CSSProperties = {

@@ -9,6 +9,10 @@ export interface Coach {
   category: string;
   judgment_url: string | null;
   judgment_type: string;
+  source_url: string | null;      // 運動部該筆公告內頁
+  court: string | null;           // 法院全名
+  case_no: string | null;         // 114年度台上字第3014號
+  judgment_date: string | null;   // YYYY-MM-DD
   first_seen_at: string;
   last_updated_at: string;
   is_active: number;

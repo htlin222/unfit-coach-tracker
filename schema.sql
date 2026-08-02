@@ -10,8 +10,12 @@ CREATE TABLE IF NOT EXISTS coaches (
   name          TEXT NOT NULL,
   sport         TEXT NOT NULL,
   category      TEXT,                      -- 球類運動 | 格鬥類 | 目標類 | 水上運動類 | 競技類 | 戶外運動類 | 傳統類 | 冬季運動類
-  judgment_url  TEXT,
-  judgment_type TEXT DEFAULT '裁判書',
+  judgment_url  TEXT,                      -- judgment.judicial.gov.tw permalink
+  judgment_type TEXT DEFAULT '裁判書',      -- 裁判書 | 判決書
+  source_url    TEXT,                      -- per-record announcement on sports.gov.tw
+  court         TEXT,                      -- 法院全名, decoded from the judgment id
+  case_no       TEXT,                      -- e.g. 114年度台上字第3014號
+  judgment_date TEXT,                      -- YYYY-MM-DD
   first_seen_at TEXT NOT NULL,             -- ISO 8601
   last_updated_at TEXT NOT NULL,           -- ISO 8601
   is_active     INTEGER DEFAULT 1          -- 1 = present in latest sync, 0 = removed

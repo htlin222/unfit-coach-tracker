@@ -51,7 +51,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Fetch page of results
   const dataResult = await env.DB.prepare(
-    `SELECT id, name, sport, category, judgment_url, judgment_type, first_seen_at, last_updated_at, is_active
+    `SELECT id, name, sport, category, judgment_url, judgment_type, source_url,
+            court, case_no, judgment_date, first_seen_at, last_updated_at, is_active
      FROM coaches
      WHERE ${whereClause}
      ORDER BY category, sport, name
