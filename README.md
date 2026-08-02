@@ -20,13 +20,12 @@
 每筆紀錄都附兩個參考連結 —— 司法院裁判書全文，以及運動部該筆公告內頁 —— 並顯示從裁判書
 永久連結解出的**法院、案號、判決日期**。
 
-> ⚠️ 每日 cron 排程目前**未啟用** — 帳號已達 Workers Free 的 5 個 cron 上限，詳見
-> [#10](https://github.com/htlin222/unfit-coach-tracker/issues/10)。在此之前請手動同步：
->
-> ```bash
-> curl -X POST -H "X-Sync-Token: $SYNC_TOKEN" \
->   https://unfit-coach-sync.hsieh-ting-lin.workers.dev/sync
-> ```
+每日 cron 排程已啟用（`0 6 * * *` UTC = 台灣 14:00）。需要立即同步時：
+
+```bash
+curl -X POST -H "X-Sync-Token: $SYNC_TOKEN" \
+  https://unfit-coach-sync.hsieh-ting-lin.workers.dev/sync
+```
 
 ## Architecture
 
